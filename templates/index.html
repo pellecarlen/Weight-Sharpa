@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome</title>
-    <!-- Link to Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-</head>
-<body>
-    <div class="container mt-4">
-        <h1>Welcome to the Home Page</h1>
-        <p>You are logged in!</p>
-        <a href="/logout" class="btn btn-primary">Logout</a>
-    </div>
+{% extends "base.html" %}
 
-    <!-- Link to Bootstrap JS -->
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-</body>
-</html>
+{% block title %}
+Welcome
+{% endblock %}
 
-
-
-
+{% block content %}
+<div class="container mt-4">
+    <h1>Welcome to the Home Page</h1>
+    <p>You are logged in!</p>
+    <a href="/logout" class="btn btn-primary">Logout</a>
+</div>
+<script>
+    // Ensure Firebase libraries are loaded and check authentication state
+    document.addEventListener('DOMContentLoaded', function() {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (!user) {
+                // User is not signed in
+                window.location.href = '/login'; // Redirect to login page
+            }
+        });
+    });
+</script>
+{% endblock %}
