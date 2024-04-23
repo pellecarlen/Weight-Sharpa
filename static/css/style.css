@@ -6,9 +6,6 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-body { display: none; /* Hide body content until auth state is confirmed */ }
-
-
 .full-center {
   display: flex;
   justify-content: center;
@@ -48,4 +45,8 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+.alert p {
+  margin: 0; /* Remove margins to eliminate visual line breaks */
 }

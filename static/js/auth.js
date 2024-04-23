@@ -1,26 +1,6 @@
-// Initialize Firebase
-firebase.initializeApp({
-    apiKey: "AIzaSyCQiubOrlJYxF3U2Cqd9otCDsS6ISXVmYI",
-    authDomain: "weight-sharpa-app.firebaseapp.com",
-    projectId: "weight-sharpa-app",
-    storageBucket: "weight-sharpa-app.appspot.com",
-    messagingSenderId: "87756158274",
-    appId: "1:87756158274:web:045603802248c1875084db",
-    measurementId: "G-MQFK0940LY"
-});
+// Script for managing user authentication state and redirections.
 
-// Redirect unauthenticated users to the login page
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        // User is signed in, show the content
-        document.body.style.display = 'block';
-    } else {
-        // User is not signed in
-        window.location.href = '/login'; // Redirecting to login page
-    }
-});
-
-// Sign up new users
+// Sign up new users and handle redirection after successful registration.
 function signUp(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -32,7 +12,7 @@ function signUp(email, password) {
         });
 }
 
-// Sign in existing users
+// Sign in existing users and handle redirection after successful login.
 function signIn(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -44,7 +24,7 @@ function signIn(email, password) {
         });
 }
 
-// Send password reset email
+// Send a password reset email to the provided email address.
 function sendPasswordReset(email) {
     firebase.auth().sendPasswordResetEmail(email)
         .then(() => {

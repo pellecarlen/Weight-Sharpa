@@ -8,21 +8,50 @@ Register
 <div class="container full-center">
     <div class="card shadow">
         <h2 class="card-title text-center">Register</h2>
-        <form action="" method="post" class="card-body">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" id="username" name="username" class="form-control" required>
-            </div>
+        <form id="registerForm" class="card-body">
+            <!-- Display flash messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert alert-danger">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+                <input type="email" id="email" name="email" class="form-control"
+                       required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+            </div>
+            <div class="mb-3">
+                <label for="firstname" class="form-label">First Name:</label>
+                <input type="text" id="firstname" name="firstname" class="form-control"
+                       required pattern="[a-zA-Z0-9\u00C0-\u00FF_-]{1,25}" title="First name may only contain letters, numbers, underscores, and dashes. No spaces. Max 25 characters. Includes international characters like å, ä, ö.">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" name="password" class="form-control" required>
+                <input type="password" id="password" name="password" class="form-control"
+                       required pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Password must be at least 8 characters long, include a number and an uppercase letter.">
+                <small>Password must be at least 8 characters long, include a number and an uppercase letter.</small>
+            </div>
+            <div class="mb-3">
+                <label for="confirm-password" class="form-label">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" class="form-control"
+                       required title="Please confirm your password" oninput="check(this)">
+                <script language='javascript' type='text/javascript'>
+                    function check(input) {
+                        if (input.value != document.getElementById('password').value) {
+                            input.setCustomValidity('Password must match.');
+                        } else {
+                            input.setCustomValidity('');
+                        }
+                    }
+                </script>
             </div>
             <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
     </div>
 </div>
+<script src="/path/to/your/auth.js"></script>
 {% endblock %}

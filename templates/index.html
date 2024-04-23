@@ -10,15 +10,4 @@ Welcome
     <p>You are logged in!</p>
     <a href="/logout" class="btn btn-primary">Logout</a>
 </div>
-<script>
-    // Ensure Firebase libraries are loaded and check authentication state
-    document.addEventListener('DOMContentLoaded', function() {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (!user) {
-                // User is not signed in
-                window.location.href = '/login'; // Redirect to login page
-            }
-        });
-    });
-</script>
 {% endblock %}

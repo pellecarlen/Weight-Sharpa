@@ -1,0 +1,38 @@
+[33mcommit 8a9363a6f5039a9df42dfe0a9f227902aa29e24c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Per Carlén <percarlen@icloud.com>
+Date:   Mon Apr 22 22:26:55 2024 +0000
+
+    Fix
+
+[33mcommit 638fdf49fd6779cdb3cd9ab61948b37a9cbb8df8[m
+Author: Per Carlén <percarlen@icloud.com>
+Date:   Mon Apr 22 21:37:20 2024 +0000
+
+    Started implementation of Firebase Auth without it's native UI
+
+[33mcommit bbfba0b86ac2fbf9fb1bec962c20ff38e21a4dfb[m
+Author: Per Carlén <percarlen@icloud.com>
+Date:   Mon Apr 22 11:36:09 2024 +0000
+
+    Created folder and HTML-structure
+
+[33mcommit 18aef6935e0c3e2f3a6437f7c1ed259fd894f618[m
+Merge: ac8c12d c44b3ea
+Author: Per Carlén <percarlen@icloud.com>
+Date:   Sun Apr 21 22:40:45 2024 +0000
+
+    Merge branch 'main' of https://github.com/pellecarlen/Weight-Sharpa
+    
+    Google Cloud uses "master", GitHub "main".
+
+[33mcommit ac8c12d2b4e51b00a780120199eb3813f035caca[m
+Author: Per Carlén <percarlen@icloud.com>
+Date:   Sun Apr 21 22:29:26 2024 +0000
+
+    Initial commit
+
+[33mcommit c44b3ea4662a37bc07310f109bc1d29ecc2bd0a6[m
+Author: pellecarlen <167211351+pellecarlen@users.noreply.github.com>
+Date:   Sun Apr 21 18:07:31 2024 +0200
+
+    Initial commit
